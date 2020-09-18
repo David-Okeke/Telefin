@@ -7,18 +7,19 @@ namespace Telefin.Models.ViewModels
     public class CreateModel
     {
         [Required]
+        public string UserName { get; set; }
+
+        [Required]
+        public string Password { get; set; }
+
         public string FirstName { get; set; }
 
-        [Required]
         public string LastName { get; set; }
 
-        [Required]
         public string PhoneNumber { get; set; }
 
-        [Required]
         public string Country { get; set; }
 
-        [Required]
         public string Address1 { get; set; }
 
         public string Address2 { get; set; }
