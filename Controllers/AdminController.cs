@@ -9,7 +9,6 @@ namespace Telefin.Controllers
 {
     public class AdminController : Controller
     {
-        // userManager provides access to the users data
         private UserManager<AppUser> userManager;
 
         public AdminController(UserManager<AppUser> usrMgr)
@@ -21,11 +20,13 @@ namespace Telefin.Controllers
 
         public ViewResult Create() => View();
 
+        // Creates new users to storage
         [HttpPost]
         public async Task<IActionResult> Create(CreateModel model)
 
         {
-            // Persists new users to storage
+            // If the model state is valid i.e if the user entered
+            // the details correctly then create that user.
             if (ModelState.IsValid)
             {
                 AppUser user = new AppUser
@@ -36,10 +37,15 @@ namespace Telefin.Controllers
                 IdentityResult result =
                     await userManager.CreateAsync(user, model.Password);
 
+                // If the model state is valid and the operations above are successful
+                // redirect the user to the index page
                 if (result.Succeeded)
                 {
                     return RedirectToAction("Index");
                 }
+                // If we are unable to create a new user
+                // Which might be due to a crappy Model state
+                // pass the reason(s) to the associated model
                 else
                 {
                     foreach (IdentityError error in result.Errors)

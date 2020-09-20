@@ -22,13 +22,7 @@ namespace Telefin.Models
             if (!context.Promos.Any())
             {
                 context.Promos.AddRange(
-                    new Promotion
-                    {
-                        Name = "SealingWand",
-                        Description = "A magic wand of power 10",
-                        Id = GenerateGUID(),
-                        Location = "SealingWand"
-                    },
+
                     new Promotion
                     {
                         Name = "Castle",
@@ -37,40 +31,22 @@ namespace Telefin.Models
                         Id = GenerateGUID(),
                         Location = "Castle"
                     },
-                    new Promotion
-                    {
-                        Name = "Einstein",
-                        Id = GenerateGUID(),
-                        Description = "Science Genius with nice hair",
+                      new Promotion
+                      {
+                          Name = "Groot",
+                          Id = GenerateGUID(),
+                          Description = "Cutie from marvel cinematic universe",
 
-                        Location = "Einstein"
-                    },
-                    new Promotion
-                    {
-                        Name = "Groot",
-                        Id = GenerateGUID(),
-                        Description = "Cutie from marvel cinematic universe",
+                          Location = "Groot"
+                      },
+                   new Promotion
+                   {
+                       Name = "Hulk",
+                       Id = GenerateGUID(),
+                       Description = "Green, always angry, strong",
 
-                        Location = "Groot"
-                    },
-                    new Promotion
-                    {
-                        Name = "Hulk",
-                        Id = GenerateGUID(),
-                        Description = "Green, always angry, strong",
-
-                        Location = "Hulk"
-                    },
-                    new Promotion
-                    {
-                        Name = "Valkyrie",
-                        Id = GenerateGUID(),
-                        Description = "Fighter Jet",
-
-                        Location = "Valkyrie"
-                    }
-
-                    );
+                       Location = "Hulk"
+                   });
             }
             else if (!context.Prints.Any())
             {
