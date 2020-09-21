@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Telefin.Models;
 using Telefin.Models.ViewModels;
 
@@ -21,6 +22,7 @@ namespace Telefin.Controllers
             };
         }
 
+        [Authorize]
         public ViewResult Index() => View(homePageVM);
 
         public ViewResult ProductShowcase() => View(homePageVM);
