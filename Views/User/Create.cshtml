@@ -1,52 +1,34 @@
-﻿@model Telefin.Models.ViewModels.CreateModel
+﻿@model CreateAccountModel
 @{ Layout = null;}
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Create Account</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/LoginStyleSheet.css" />
 </head>
-<body class="m-5 p-5">
+<body>
+    <div asp-validation-summary="All" class="text-danger text-center"></div>
     <form asp-controller="User" asp-action="Create" method="post">
+        <div class="formbody">
+            <h3>Create Account</h3>
+            <div class="form-group">
+                <label asp-for="FirstName">Firstname :</label>
+                <div> <input asp-for="FirstName" /></div>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName">Lastname :</label>
+                <div> <input asp-for="LastName" /></div>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber"></label>
+                <div> <input asp-for="PhoneNumber" /></div>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmailAddress">Email :</label>
+                <div> <input asp-for="EmailAddress" /></div>
+            </div>
 
-        <div class="form-group">
-            <label asp-for="FirstName">Firstname :</label>
-            <div> <input asp-for="FirstName" /></div>
-        </div>
-        <div class="form-group">
-            <label asp-for="LastName">Lastname :</label>
-            <div> <input asp-for="LastName" /></div>
-        </div>
-        <div class="form-group">
-            <label asp-for="PhoneNumber"></label>
-            <div> <input asp-for="PhoneNumber" /></div>
-        </div>
-        <div class="form-group">
-            <label asp-for="Country">Country :</label>
-            <div> <input asp-for="Country" /></div>
-        </div>
-        <div class="form-group">
-            <label asp-for="Address1">Address Line 1 :</label>
-            <div> <input asp-for="Address1" /></div>
-        </div>
-        <div class="form-group">
-            <label asp-for="Address2">Address Line 2 :</label>
-            <div> <input asp-for="Address2" /></div>
-        </div>
-        <div class="form-group">
-            <label asp-for="Address3">Address Line 3 :</label>
-            <div> <input asp-for="Address3" /></div>
-        </div>
-        <div class="form-group">
-            <label asp-for="Email">Email :</label>
-            <div> <input asp-for="Email" /></div>
-        </div>
-        <div>
-            <label>
-                <input type="checkbox" /> Receive emails and promotions
-            </label>
-        </div>
-        <div>
-            <input class="btn btn-primary" type="submit" value="Complete registration" />
+            <button class="whitebutton" type="submit">Create</button>
         </div>
     </form>
 </body>

@@ -34,13 +34,13 @@ namespace Telefin.Controllers
         public async Task<IActionResult> Create(CreateModel model)
 
         {
-            // If the model state is valid i.e if the user entered
+            // If the model state is valid i.e if the admin entered
             // the details correctly then create that user.
             if (ModelState.IsValid)
             {
                 AppUser user = new AppUser
                 {
-                    UserName = model.UserName,
+                    UserName = model.Name,
                     Email = model.Email
                 };
                 IdentityResult result =
@@ -109,41 +109,50 @@ namespace Telefin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(string id, string email,
-            string password)
+        public async Task<IActionResult> Edit(string userName, string email,
+        string password)
         {
-            AppUser user = await userManager.FindByIdAsync(id);
+            AppUser user = await userManager.FindByEmailAsync(email);
+
             if (user != null)
             {
+                user.UserName = userName;
                 user.Email = email;
                 IdentityResult validEmail
-                    = await userValidator.ValidateAsync(userManager, user);
+                = await userValidator.ValidateAsync(userManager, user);
                 if (!validEmail.Succeeded)
                 {
                     AddErrorsFromResult(validEmail);
                 }
+
                 IdentityResult validPass = null;
                 if (!string.IsNullOrEmpty(password))
                 {
                     validPass = await passwordValidator.ValidateAsync(userManager,
-                        user, password);
+                    user, password);
                     if (validPass.Succeeded)
                     {
                         user.PasswordHash = passwordHasher.HashPassword(user,
-                            password);
+                        password);
                     }
-                    else { AddErrorsFromResult(validPass); }
+                    else
+                    {
+                        AddErrorsFromResult(validPass);
+                    }
                 }
                 if ((validEmail.Succeeded && validPass == null)
-                    || (validEmail.Succeeded && password != string.Empty &&
-                    validPass.Succeeded))
+                || (validEmail.Succeeded
+                && password != string.Empty && validPass.Succeeded))
                 {
                     IdentityResult result = await userManager.UpdateAsync(user);
                     if (result.Succeeded)
                     {
                         return RedirectToAction("Index");
                     }
-                    else { AddErrorsFromResult(result); }
+                    else
+                    {
+                        AddErrorsFromResult(result);
+                    }
                 }
             }
             else
