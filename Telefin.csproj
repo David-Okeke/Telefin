@@ -27,4 +27,8 @@
   <ItemGroup>
     <None Include="wwwroot\assets\logo.png" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Infrastructure\" />
+  </ItemGroup>
 </Project>
