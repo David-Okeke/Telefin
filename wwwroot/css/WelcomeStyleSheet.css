@@ -1,0 +1,17 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../assets/logo.png");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-color: rgba(224, 9, 9, 0.20)
+}
+
+p {
+    text-align: center;
+    height: 1000px;
+    margin: auto;
+    margin-top: auto;
+}

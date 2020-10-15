@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using EarlyMan.Models;
 using EarlyMan.Models.ViewModels;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace EarlyMan.Controllers
 {
@@ -25,7 +26,40 @@ namespace EarlyMan.Controllers
 
         [AllowAnonymous]
         [HttpPost]
-        public ActionResult Create() => RedirectToAction("Index", "Home");
+        public async Task<ActionResult> Create(CreateModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                AppUser user = new AppUser
+                {
+                    UserName = model.UserName,
+                    Email = model.Email,
+                    PhoneNumber = model.PhoneNo
+                };
+                IdentityResult result =
+                    await userManager.CreateAsync(user, model.Password);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("WelcomePage");
+                }
+                else
+                {
+                    foreach (IdentityError error in result.Errors)
+                    {
+                        ModelState.AddModelError("", error.Description);
+                    }
+                }
+            }
+            return View(model);
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        public ViewResult WelcomePage(CreateModel model)
+        {
+            ViewBag.UserName = model.UserName;
+            return View();
+        }
 
         [AllowAnonymous]
         public IActionResult SignIn(string returnUrl)

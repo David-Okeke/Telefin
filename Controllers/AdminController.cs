@@ -40,7 +40,7 @@ namespace EarlyMan.Controllers
             {
                 AppUser user = new AppUser
                 {
-                    UserName = model.Name,
+                    UserName = model.UserName,
                     Email = model.Email
                 };
                 IdentityResult result =
@@ -50,6 +50,7 @@ namespace EarlyMan.Controllers
                 // redirect the user to the index page
                 if (result.Succeeded)
                 {
+                    ViewBag.UserName = model.UserName;
                     return RedirectToAction("Index");
                 }
                 // If we are unable to create a new user

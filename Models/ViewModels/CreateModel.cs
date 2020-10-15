@@ -6,13 +6,18 @@ namespace EarlyMan.Models.ViewModels
 {
     public class CreateModel
     {
-        [Required]
-        public string Name { get; set; }
+        [Required(ErrorMessage = "Invalid input")]
+        public string UserName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter a valid email address")]
+        [RegularExpression(".+\\@.+\\..+",
+           ErrorMessage = "Please enter a valid email address")]
+        public string Email { get; set; }
+
+        [Required(ErrorMessage = "Please enter your password")]
         public string Password { get; set; }
 
-        [Required]
-        public string Email { get; set; }
+        [Required(ErrorMessage = "Please enter a valid phone number")]
+        public string PhoneNo { get; set; }
     }
 }
