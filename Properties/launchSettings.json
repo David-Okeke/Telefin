@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Telefin": {
+    "EarlyMan": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

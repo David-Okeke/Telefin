@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Telefin.Models
+namespace EarlyMan.Models
 {
     public class ApplicationDbContext : DbContext
     {

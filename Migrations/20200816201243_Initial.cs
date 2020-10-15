@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Telefin.Migrations
+namespace EarlyMan.Migrations
 {
     public partial class Initial : Migration
     {

@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 
-namespace Telefin.Models.ViewModels
+namespace EarlyMan.Models.ViewModels
 {
     public class CreateAccountModel
     {

@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
-using Telefin.Models;
+using EarlyMan.Models;
 
-namespace Telefin
+namespace EarlyMan
 {
     public class Startup
     {

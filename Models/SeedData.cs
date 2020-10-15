@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Linq;
 
-namespace Telefin.Models
+namespace EarlyMan.Models
 {
     public class SeedData
     {

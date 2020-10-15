@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace Telefin.Models
+namespace EarlyMan.Models
 {
     public class AppIdentityDbContext : IdentityDbContext<AppUser>
     {

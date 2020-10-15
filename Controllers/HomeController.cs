@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Telefin.Models;
-using Telefin.Models.ViewModels;
+using EarlyMan.Models;
+using EarlyMan.Models.ViewModels;
 
-namespace Telefin.Controllers
+namespace EarlyMan.Controllers
 {
     public class HomeController : Controller
     {

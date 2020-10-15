@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
 
-namespace Telefin.Models.ViewModels
+namespace EarlyMan.Models.ViewModels
 {
     public class HomepageItems
     {

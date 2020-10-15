@@ -2,10 +2,10 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using Telefin.Models;
-using Telefin.Models.ViewModels;
+using EarlyMan.Models;
+using EarlyMan.Models.ViewModels;
 
-namespace Telefin.Controllers
+namespace EarlyMan.Controllers
 {
     [Authorize]
     public class UserController : Controller

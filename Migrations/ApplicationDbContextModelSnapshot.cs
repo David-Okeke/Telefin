@@ -6,9 +6,9 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
 using System;
-using Telefin.Models;
+using EarlyMan.Models;
 
-namespace Telefin.Migrations
+namespace EarlyMan.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -20,7 +20,7 @@ namespace Telefin.Migrations
                 .HasAnnotation("ProductVersion", "2.0.3-rtm-10026")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Telefin.Models.Print", b =>
+            modelBuilder.Entity("EarlyMan.Models.Print", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
@@ -40,7 +40,7 @@ namespace Telefin.Migrations
                     b.ToTable("Prints");
                 });
 
-            modelBuilder.Entity("Telefin.Models.Promotion", b =>
+            modelBuilder.Entity("EarlyMan.Models.Promotion", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();

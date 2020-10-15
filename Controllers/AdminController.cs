@@ -2,10 +2,10 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.WindowsAzure.Storage;
 using System.Threading.Tasks;
-using Telefin.Models;
-using Telefin.Models.ViewModels;
+using EarlyMan.Models;
+using EarlyMan.Models.ViewModels;
 
-namespace Telefin.Controllers
+namespace EarlyMan.Controllers
 {
     public class AdminController : Controller
     {

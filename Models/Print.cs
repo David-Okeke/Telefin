@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Telefin.Models
+namespace EarlyMan.Models
 {
     public class Print
     {

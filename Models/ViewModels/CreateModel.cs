@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.ValueGeneration.Internal;
 using System.ComponentModel.DataAnnotations;
 
-namespace Telefin.Models.ViewModels
+namespace EarlyMan.Models.ViewModels
 {
     public class CreateModel
     {

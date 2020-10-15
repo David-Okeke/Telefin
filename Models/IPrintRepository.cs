@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace Telefin.Models
+namespace EarlyMan.Models
 {
     public interface IPrintRepository
     {

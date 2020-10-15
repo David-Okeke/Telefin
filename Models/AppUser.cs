@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace Telefin.Models
+namespace EarlyMan.Models
 {
     public class AppUser : IdentityUser
     {

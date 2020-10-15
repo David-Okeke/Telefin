@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Telefin.Models.ViewModels
+namespace EarlyMan.Models.ViewModels
 {
     public class LoginModel
     {
