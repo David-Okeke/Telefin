@@ -61,6 +61,7 @@ namespace EarlyMan.Controllers
             return View();
         }
 
+        [HttpGet]
         [AllowAnonymous]
         public IActionResult SignIn(string returnUrl)
         {

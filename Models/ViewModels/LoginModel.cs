@@ -8,12 +8,12 @@ namespace EarlyMan.Models.ViewModels
 {
     public class LoginModel
     {
-        [Required(ErrorMessage = "Please enter your email address")]
-        [RegularExpression(".+\\@.+\\..+",
-            ErrorMessage = "Please enter a valid email address")]
+        [Required]
+        [UIHint("email")]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "Please enter your password")]
+        [Required]
+        [UIHint("password")]
         public string Password { get; set; }
     }
 }

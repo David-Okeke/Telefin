@@ -22,7 +22,7 @@ namespace EarlyMan.Controllers
             };
         }
 
-        // [Authorize]
+        [Authorize]
         public ViewResult Index() => View(homePageVM);
 
         public ViewResult ProductShowcase() => View(homePageVM);
