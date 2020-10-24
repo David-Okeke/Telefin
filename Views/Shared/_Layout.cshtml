@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="description" content="Affordable 3d printing" />
-    <meta name="keywords" content="3D printing, materials, PETA, professional printing" />
-    <meta name="author" content="Chihurumnanya Agwuocha" />
+    <meta name="keywords" content="Artwork sale, EarlyMan, 3D printing, materials, PETA" />
+    <meta name="author" content="David Okeke" />
     <meta name="viewport" content="width=device-width, initial-scale =1,
           shrink-to-fit = no" />
     <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
@@ -15,7 +15,7 @@
 </head>
 <body>
     <nav class="TempNav">
-        <div class="container-s">
+        <div class="container">
             <div id="branding">
                 <h1> <a class="branding">EARLYMAN Inc.</a></h1>
             </div>
@@ -30,24 +30,13 @@
                             <i class="fa fa-shopping-cart"></i>
                         </a>
                     </li>
+                    @*If user is already logged in do not display this instead display hello +  username!*@
                     <li>
                         <a class="whitebutton" asp-controller="User" asp-action="SignIn">Sign In</a>
                     </li>
                     <li>
                         <a class="blackbutton text-white" asp-controller="User" asp-action="CreateAccount">Create Account</a>
                     </li>
-
-                    @*<li>
-                        <div class="dropdown">
-                            <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-                            <div id="myDropdown" class="dropdown-content">
-                                <a href="#">Link 1</a>
-                                <a href="#">Link 2</a>
-                                <a href="#">Link 3</a>
-                            </div>
-                        </div>*@
-                    @*<i class="fa fa dropdown"></i>*@
-                    @*</li>*@
                 </ul>
             </div>
         </div>

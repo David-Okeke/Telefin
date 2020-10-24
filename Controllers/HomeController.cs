@@ -27,6 +27,6 @@ namespace EarlyMan.Controllers
 
         public ViewResult ProductShowcase() => View(homePageVM);
 
-        public ViewResult ItemSummary() => View();
+        public ViewResult Summary() => View();
     }
 }

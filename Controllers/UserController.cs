@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using EarlyMan.Models;
 using EarlyMan.Models.ViewModels;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace EarlyMan.Controllers
 {
@@ -90,9 +89,16 @@ namespace EarlyMan.Controllers
                     }
                 }
                 ModelState.AddModelError(nameof(LoginModel.Email),
-                    "Invalid user or password");
+                    "Invalid username or password");
             }
             return View(details);
+        }
+
+        [Authorize]
+        public async Task<IActionResult> Logout()
+        {
+            await signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
         }
     }
 }
