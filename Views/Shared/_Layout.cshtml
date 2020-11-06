@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model EarlyMan.Models.ViewModels.HomepageItems
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -30,13 +31,15 @@
                             <i class="fa fa-shopping-cart"></i>
                         </a>
                     </li>
-                    @*If user is already logged in do not display this instead display hello +  username!*@
+                    @*@if (!Model.Context.Authentication.HttpContext.User.Identity.IsAuthenticated)
+                        {*@
                     <li>
                         <a class="whitebutton" asp-controller="User" asp-action="SignIn">Sign In</a>
                     </li>
                     <li>
                         <a class="blackbutton text-white" asp-controller="User" asp-action="CreateAccount">Create Account</a>
                     </li>
+                    @*}*@
                 </ul>
             </div>
         </div>

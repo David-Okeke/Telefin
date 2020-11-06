@@ -1,14 +1,18 @@
-﻿using EarlyMan.Models;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
+using EarlyMan.Models;
 
 namespace EarlyMan
 {
-    public class Startup
+    public class StartupDevelopment
     {
+        public StartupDevelopment(IConfiguration configuration) =>
+        Configuration = configuration;
+
         public IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services)
@@ -44,9 +48,10 @@ namespace EarlyMan
 
         public void Configure(IApplicationBuilder app)
         {
+            app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
+            //  app.UseBrowserLink();
             app.UseStaticFiles();
-            app.UseExceptionHandler("/Home/Error");
             app.UseAuthentication();
             app.UseMvc(routes =>
             {

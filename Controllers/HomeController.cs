@@ -2,31 +2,41 @@
 using Microsoft.AspNetCore.Mvc;
 using EarlyMan.Models;
 using EarlyMan.Models.ViewModels;
+using Microsoft.AspNetCore.Http;
 
 namespace EarlyMan.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
-        private IPrintRepository printRepo;
-        private IPromotionRepository promoRepo;
-        private HomepageItems homePageVM;
+        private HomepageItems homePageVM { get; set; }
+        private HttpContext Cxt { get; set; }
 
         public HomeController(IPrintRepository print, IPromotionRepository promo)
         {
-            printRepo = print;
-            promoRepo = promo;
             homePageVM = new HomepageItems
             {
-                printRepository = printRepo,
-                promotionRepository = promoRepo
+                PrintRepository = print,
+                PromotionRepository = promo,
+                Context = Cxt
             };
         }
 
-        [Authorize]
+        [AllowAnonymous]
         public ViewResult Index() => View(homePageVM);
 
+        [AllowAnonymous]
         public ViewResult ProductShowcase() => View(homePageVM);
 
-        public ViewResult Summary() => View();
+        [AllowAnonymous]
+        [HttpGet]
+        public ViewResult ShoppingCart() => View();
+
+        [Authorize]
+        [HttpPost]
+        public ActionResult Checkout() => View();
+
+        [AllowAnonymous]
+        public ViewResult Error() => View();
     }
 }

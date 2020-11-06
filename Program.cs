@@ -12,7 +12,7 @@ namespace EarlyMan
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
+                .UseStartup(nameof(EarlyMan))
                 .UseDefaultServiceProvider(options =>
                 options.ValidateScopes = false)
                 .Build();
